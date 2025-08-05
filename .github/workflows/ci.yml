@@ -1,0 +1,11 @@
+name: ci
+on: push
+
+jobs:
+  ci:
+    strategy:
+      matrix:
+        os: [depot-ubuntu-latest-4, depot-ubuntu-latest-arm-4]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - run: echo "Hello World"
